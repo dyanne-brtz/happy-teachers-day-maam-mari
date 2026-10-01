@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teachers' Day, Ma'am Mari! 💗</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="cover">
+            <img src="images/cover.jpg" alt="Teachers' Day Cover" class="cover-img"
+                 onerror="this.parentElement.classList.add('no-image')">
+            <div class="cover-overlay">
+                <div class="cover-text">
+                    <p class="cover-tag">A Gift For</p>
+                    <h1>Ma'am Mari</h1>
+                    <p class="cover-sub">Happy Teachers' Day 💗</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="greeting">
+            <div class="emoji">🌷 📚 🍎</div>
+            <h2>Happy Teachers' Day, Ma'am Mari!</h2>
+            <p class="subtitle">A simple tribute from your students</p>
+
+            <button class="open-btn" id="openBtn" onclick="openMessage()">
+                💌 Open the Message
+            </button>
+        </div>
+
+        <div class="long-message" id="longMessage">
+
+            <h3>Dear Ma'am Mari,</h3>
+
+            <p>
+        Thank you, Ma'am, for teaching us the world of programming and web development.
+        Before your class, we didn't even know how to write a single line of HTML. Now,
+        we can create our own websites using VS Code — and that's because of you.
+        You made coding feel less scary and more exciting.
+    </p>
+
+    <p>
+        Thank you for your patience every time our code doesn't work and we get errors
+        we don't understand. You always guide us step by step — from fixing broken tags,
+        to debugging CSS, to finally seeing our website come to life in the browser.
+        You never gave up on us, even when our code refused to cooperate.
+    </p>
+
+    <p>
+        You didn't just teach us how to code — you taught us how to think, how to solve
+        problems, and how to keep trying even when things get hard. Those lessons go
+        beyond the four walls of the computer lab. Because of you, we now believe we
+        can build anything we set our minds to.
+    </p>
+
+    <p>
+        On this special day, we just want you to know that every line of code we write,
+        every website we build, and every bug we fix — is a reflection of what you taught us.
+        Thank you for being our teacher, our guide, and our biggest inspiration in ITE.
+    </p>
+    
+
+            <p class="message-end">
+                Happy Teachers' Day, Ma'am! We love you! 💗
+            </p>
+
+            <div class="gift-section">
+                <h4>🎁 One More Surprise!</h4>
+                <p class="gift-hint">Click the box to open ♡</p>
+
+                <div class="gift" id="giftBox" onclick="openGift()">
+                    <div class="gift-lid"></div>
+                    <div class="gift-box">
+                        <div class="ribbon-v"></div>
+                        <div class="ribbon-h"></div>
+                        <div class="bow">🎀</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-photo-section" id="groupPhoto">
+                <div class="polaroid">
+                    <img src="images/group.jpg" alt="Our Class with Ma'am"
+                         onerror="this.parentElement.parentElement.classList.add('no-image')">
+                </div>
+                <p class="photo-caption">A memory from your students 💗</p>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            Made with love by your students 💗
+        </div>
+
+    </div>
+
+    <script>
+        function openMessage() {
+            const msg = document.getElementById('longMessage');
+            msg.classList.add('show');
+
+            document.getElementById('openBtn').style.display = 'none';
+
+            setTimeout(() => {
+                msg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        function openGift() {
+            const gift = document.getElementById('giftBox');
+            if (gift.classList.contains('opened')) return;
+            gift.classList.add('opened');
+
+            setTimeout(() => {
+                const photo = document.getElementById('groupPhoto');
+                photo.classList.add('show');
+                setTimeout(() => {
+                    photo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 200);
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
